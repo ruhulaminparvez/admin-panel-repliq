@@ -9,3 +9,4 @@ E-commerce admin panel to be built using React.js or Next.js and TailwindCSS
 - React Router (Routing)
 - React Phone Input (Country Wise Phone Number Input)
 - React Icons (Icons)
+- Spilde (Slider For Images or Banner)
