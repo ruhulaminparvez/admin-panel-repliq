@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Form, Link } from "react-router-dom";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 const Registration = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -22,18 +24,21 @@ const Registration = () => {
               <label className="label">
                 <span className="label-text">Phone Number</span>
               </label>
-              <input
-                type="text"
+              <PhoneInput
+                country={'bd'}
+                inputStyle={{ width: '100%' }}
+                inputClass="input input-bordered"
+                placeholder="Enter your phone number"
                 {...register("phoneNumber",
                   {
                     required: "**Phone Number is Required",
-                    pattern: { value: /^(\+88)?(01)[0-9]{9}$/, message: "**Invalid Phone Number" }
+                    minLength: { value: 11, message: "**Phone Number must be at least 11 characters" },
+                    maxLength: { value: 11, message: "**Phone Number must be at most 11 characters" },
+                    pattern: { value: /^(?:\+88|01)?(?:\d{11}|\d{13})$/, message: "**Phone Number must be valid" }
                   }
                 )}
-                placeholder="Enter your phone number"
-                className="input input-bordered"
+                {...errors.phoneNumber && <p className="text-red-700 mt-2">{errors.phoneNumber?.message}</p>}
               />
-              {errors.phoneNumber && <p className="text-red-700 mt-2">{errors.phoneNumber?.message}</p>}
             </div>
             <div className="form-control">
               <label className="label">
