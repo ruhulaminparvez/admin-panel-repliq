@@ -26,7 +26,7 @@ const Registration = () => {
               </label>
               <PhoneInput
                 country={'bd'}
-                inputStyle={{ width: '100%' }}
+                inputStyle={{ width: '100%', height: '40px' }}
                 inputClass="input input-bordered"
                 placeholder="Enter your phone number"
                 {...register("phoneNumber",
