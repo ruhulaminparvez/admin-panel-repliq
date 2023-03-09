@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Form } from "react-router-dom";
 import customerData from "./CustomerData";
-import { Toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 const AdminCustomerModal = () => {
   const {
@@ -23,7 +23,7 @@ const AdminCustomerModal = () => {
       status: data.status,
     };
     customerData.push(newCustomer);
-    Toast.success("Customer added successfully");
+    toast.success("Customer added successfully");
 
     //clear form
     document.getElementById("name").value = "";
