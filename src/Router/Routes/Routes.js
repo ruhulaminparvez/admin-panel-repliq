@@ -38,6 +38,10 @@ const router = createBrowserRouter([
       {path: "/admin/product", element: <AdminProduct />},
       {path: "/admin/order", element: <AdminOrder />},
     ]
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ]);
 

@@ -17,15 +17,23 @@ const Dashboard = () => {
                         <img src={adminImg} alt="admin" className="w-full"/>
                 </div>
                 <div className="card flex flex-row justify-center items-center mt-10 gap-5">
-                    <button className="btn btn-primary">
-                        <Link to="/admin/customer">Admin Customer List</Link>
-                    </button>
-                    <button className="btn btn-primary">
-                        <Link to="/admin/product">Admin Product List</Link>
-                    </button>
-                    <button className="btn btn-primary">
-                        <Link to="/admin/order">Admin Order List</Link>
-                    </button>
+                    
+                    <Link to="/admin/customer">
+                        <button className="btn btn-primary">
+                            Admin Customer List
+                        </button>
+                    </Link>
+                    
+                    <Link to="/admin/product">
+                        <button className="btn btn-primary">
+                            Admin Product List
+                        </button>
+                    </Link>
+                    <Link to="/admin/order">
+                        <button className="btn btn-primary">
+                            Admin Order List
+                        </button>
+                    </Link>
                 </div>
             </div>
         </>
