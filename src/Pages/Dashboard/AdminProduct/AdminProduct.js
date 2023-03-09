@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductTable from './ProductTable';
+import AdminProductModal from './AdminProductModal';
+
 
 const AdminProduct = () => {
     return (
@@ -12,7 +14,8 @@ const AdminProduct = () => {
                 </ul>
                 <div>
                     <div className="flex justify-end">
-                        <Link to="/admin/customer/add" className="btn btn-primary btn-sm">Add Product</Link>
+                        <label htmlFor="admin-product-modal" className="btn btn-primary btn-sm">Add Product</label>
+                        <AdminProductModal/>
                     </div>
                     <h1 className="text-3xl font-bold text-center mt-5">Admin Product List</h1>
                     <ProductTable/>
