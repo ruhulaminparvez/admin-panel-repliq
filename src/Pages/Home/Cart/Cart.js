@@ -1,5 +1,6 @@
 import React from 'react';
 import cartData from './CartData';
+import { toast } from 'react-hot-toast';
 
 const Cart = () => {
     return (
@@ -56,7 +57,12 @@ const Cart = () => {
                                         <button className="btn btn-primary btn-xs ml-2">+</button>
                                     </td>
                                     <th>
-                                    <button className="btn btn-error btn-xs mr-2">remove</button>
+                                    <button className="btn btn-error btn-xs mr-2"
+                                    onClick={() => {
+                                        cartData.splice(index, 1);
+                                        toast.success("Product Removed");
+                                    }}
+                                    >remove</button>
                                     <button className="btn btn-primary btn-xs">details</button>
                                     </th>
                                 </tr>

@@ -1,5 +1,6 @@
 import React from "react";
 import productData from "./ProductData";
+import { toast } from "react-hot-toast";
 
 const ProductTable = () => {
   return (
@@ -34,21 +35,21 @@ const ProductTable = () => {
                     </th>
                     <td>
                       <div className="flex jus items-center space-x-3">
-                          <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                              <img src={item.image} alt={item.name} />
-                            </div>
-                          </div>
-                          <div>
-                            <div className="font-bold">{item.name}</div>
+                        <div className="avatar">
+                          <div className="mask mask-squircle w-12 h-12">
+                            <img src={item.image} alt={item.name} />
                           </div>
                         </div>
+                        <div>
+                          <div className="font-bold">{item.name}</div>
+                        </div>
+                      </div>
                     </td>
                     <td>
-                        <div className="font-bold">${item.price}.00</div>
+                      <div className="font-bold">${item.price}.00</div>
                     </td>
                     <td>
-                        <div className="font-bold">{item.quantity}</div>
+                      <div className="font-bold">{item.quantity}</div>
                     </td>
                     <td>
                       <div className="font-semibold btn btn-xs btn-info">
@@ -56,7 +57,13 @@ const ProductTable = () => {
                       </div>
                     </td>
                     <th>
-                      <button className="btn btn-error btn-xs mr-2">
+                      <button
+                        className="btn btn-error btn-xs mr-2"
+                        onClick={() => {
+                          productData.splice(index, 1);
+                          toast.success("Product Deleted Successfully");
+                        }}
+                      >
                         delete
                       </button>
                       <button className="btn btn-primary btn-xs">

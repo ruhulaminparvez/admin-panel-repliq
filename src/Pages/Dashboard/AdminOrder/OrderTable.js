@@ -1,5 +1,6 @@
 import React from "react";
 import orderData from "./OrderData";
+import { toast } from "react-hot-toast";
 
 const OrderTable = () => {
   return (
@@ -49,25 +50,31 @@ const OrderTable = () => {
                       </div>
                     </th>
                     <th>
-                        <div>
-                            <div className="font-bold">{item.customerName}</div>
-                            <div className="text-sm opacity-50">
-                                {item.customerAddress}
-                            </div>
+                      <div>
+                        <div className="font-bold">{item.customerName}</div>
+                        <div className="text-sm opacity-50">
+                          {item.customerAddress}
                         </div>
+                      </div>
                     </th>
                     <th>
-                        <div>
-                            <div className="font-bold">{item.customerEmail}</div>
-                            <div className="text-sm opacity-50">
-                                {item.customerPhone}
-                            </div>
+                      <div>
+                        <div className="font-bold">{item.customerEmail}</div>
+                        <div className="text-sm opacity-50">
+                          {item.customerPhone}
                         </div>
+                      </div>
                     </th>
                     <th>{item.price}</th>
                     <th>{item.quantity}</th>
                     <th>
-                      <button className="btn btn-error btn-xs mr-2">
+                      <button
+                        className="btn btn-error btn-xs mr-2"
+                        onClick={() => {
+                          orderData.splice(index, 1);
+                          toast.success("Order Deleted");
+                        }}
+                      >
                         delete
                       </button>
                       <button className="btn btn-primary btn-xs">
