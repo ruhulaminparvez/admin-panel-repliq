@@ -18,19 +18,15 @@ const AdminProductModal = () => {
                         <input type="number" name="price" id="price" className="input input-bordered" />
                     </div>
                     <div className="flex flex-col mt-4">
+                        <label htmlFor="stock">Stock</label>
+                        <input type="number" name="stock" id="stock" className="input input-bordered" />
+                    </div>
+                    <div className="flex flex-col mt-4">
                     <label className="label">
                         <span className="label-text">Product Image</span>
                     </label>
                     <input type="file" className="file-input file-input-bordered w-full" />
 
-                    </div>
-                    <div className="flex flex-col mt-4">
-                        <label htmlFor="category">Category</label>
-                        <select name="category" id="category" className="input input-bordered">
-                            <option value="electronics">Electronics</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="sports">Sports</option>
-                        </select>
                     </div>
                     <div className="flex flex-col mt-4">
                         <label htmlFor="status">Status</label>
