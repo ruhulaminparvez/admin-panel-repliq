@@ -33,9 +33,16 @@ const ProductTable = () => {
                       </label>
                     </th>
                     <td>
-                      <div>
-                        <div className="font-bold">{item.name}</div>
-                      </div>
+                      <div className="flex jus items-center space-x-3">
+                          <div className="avatar">
+                            <div className="mask mask-squircle w-12 h-12">
+                              <img src={item.image} alt={item.name} />
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-bold">{item.name}</div>
+                          </div>
+                        </div>
                     </td>
                     <td>
                         <div className="font-bold">${item.price}.00</div>
