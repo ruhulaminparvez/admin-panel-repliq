@@ -10,6 +10,9 @@ import NotFound from "../../Pages/NotFound/NotFound";
 import DashboardLayout from '../../layouts/DashboardLayout';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
 import Cart from '../../Pages/Home/Cart/Cart';
+import AdminProduct from "../../Pages/Dashboard/AdminProduct/AdminProduct";
+import AdminCustomer from "../../Pages/Dashboard/AdminCustomer/AdminCustomer";
+import AdminOrder from "../../Pages/Dashboard/AdminOrder/AdminOrder";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,9 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {path: "/admin", element: <Dashboard />},
+      {path: "/admin/customer", element: <AdminCustomer />},
+      {path: "/admin/product", element: <AdminProduct />},
+      {path: "/admin/order", element: <AdminOrder />},
     ]
   }
 ]);

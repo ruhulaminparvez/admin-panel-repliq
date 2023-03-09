@@ -24,7 +24,7 @@ const Cart = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {/* row 1 */}
+                    {/* row */}
                     {
                         cartData.length > 0 ? cartData.map((item, index) => {
                             return (
