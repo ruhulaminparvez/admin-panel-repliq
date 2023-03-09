@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Assets/logo/logos.png';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const NavBar = () => {
   const navItems = (
@@ -42,7 +43,10 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           <Link to="/login" className="btn btn-primary mr-2">LogIn</Link>
-          <Link to="/admin" className="btn btn-primary">Admin Panel</Link>
+          <Link to="/admin" className="btn btn-primary mr-2">Admin Panel</Link>
+          <Link to="/cart" className="btn btn-primary">
+            <AiOutlineShoppingCart className="text-xl" />
+          </Link>
         </div>
       </div>
     </>

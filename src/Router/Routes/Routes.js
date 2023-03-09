@@ -7,6 +7,9 @@ import Contact from "../../Pages/Home/Contact/Contact";
 import LogIn from "../../Pages/LogIn/LogIn";
 import Registration from "../../Pages/Registration/Registration";
 import NotFound from "../../Pages/NotFound/NotFound";
+import DashboardLayout from '../../layouts/DashboardLayout';
+import Dashboard from '../../Pages/Dashboard/Dashboard';
+import Cart from '../../Pages/Home/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +22,16 @@ const router = createBrowserRouter([
       {path: "/contact", element: <Contact />},
       {path: "/login", element: <LogIn />},
       {path: "/registration", element: <Registration />},
+      {path: "/cart", element: <Cart />},
       {path: "*", element: <NotFound />}
     ],
+  },
+  {
+    path: "/admin",
+    element: <DashboardLayout />,
+    children: [
+      {path: "/admin", element: <Dashboard />},
+    ]
   }
 ]);
 
